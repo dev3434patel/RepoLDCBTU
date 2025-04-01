@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LD Capital Bridge to USA, LLC</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Times New Roman', serif;
+    }
+    
+
+    body {
+      background-color: #000033;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      overflow-y: auto;
+    }
+
+    .main-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      overflow-y: auto;
+      margin: 0 auto; /* Center the container */
+      align-items: center; /* Center items horizontally */
+    }
+
+    .logo-container {
+      width: 180px;
+      margin: 10px auto 20px;
+    }
+
+    .logo {
+      width: 100%;
+      height: auto;
+    }
+
+    .filter-buttons {
+      position: relative;
+      margin: auto;
+      text-align: center;
+      display: flex; /* Use flexbox for alignment */
+      justify-content: center; /* Center buttons */
+      flex-wrap: wrap; /* Allow buttons to wrap */
+    }
+
+    .filter-btn {
+      display: inline-block;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px; /* Adjust margin for spacing */
+      padding: 12px 24px; /* Increased padding for better appearance */
+   
+      background: linear-gradient(90deg, #00b8e6, #007bb8); /* Gradient background */
+      color: white;
+      font-size: 1.5em; /* Increased font size for better visibility */
+      border-radius: 25px;
+      transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease; /* Smooth transition */
+      text-decoration: none; /* Remove underline */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow effect */
+    }
+
+    .filter-btn:hover {
+      transform: scale(1.05); /* Slight zoom effect */
+      background: linear-gradient(90deg, #007bb8, #00b8e6); /* Reverse gradient on hover */
+      border-color: #00b8e6; /* Sky blue border on hover */
+    }
+
+    .status-message {
+      text-align: center;
+      padding: 20px;
+      margin: 20px auto;
+    }
+
+    .company-name {
+      color: #ffffff;
+      font-size: 2.07rem;
+      margin-bottom: 15px;
+      font-weight: normal;
+    }
+
+    .maintenance-title {
+      color: #00b8e6;
+      font-size: 2.875rem;
+      margin-bottom: 15px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .maintenance-text {
+      color: #ffffff;
+      font-size: 1.38rem;
+      margin-bottom: 5px;
+    }
+
+    .return-text {
+      color: #ffffff;
+      font-size: 1.38rem;
+      margin-bottom: 30px;
+    }
+
+    .contact-info {
+      margin-top: 20px;
+    }
+
+    .contact-heading {
+      color: #ffffff;
+      font-size: 1.38rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .email-links {
+      color: #ffffff;
+      font-size: 1.265rem;
+    }
+
+    .email-links a {
+      color: #00b8e6;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .email-links a:hover {
+      color: #ffffff;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 50%; /* Center horizontally */
+      top: 50%; /* Center vertically */
+      width: 85%; /* Full width */
+      height: 85%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+      padding-top: 0; /* No padding */
+      transform: translate(-50%, -50%); /* Center the modal */
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 0; /* No margin */
+      padding: 0; /* No padding */
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: hidden; /* Disable scrolling in the modal */
+    }
+
+    .modal-content iframe {
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      border: none; /* No border */
+      overflow: auto; /* Enable scrolling for the PDF */
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .filter-btn {
+        font-size: 1.2em; /* Adjust font size for mobile */
+        padding: 10px 20px; /* Adjust padding for mobile */
+      }
+
+      .modal {
+        width: 95%; /* Adjust modal width for mobile */
+        height: 95%; /* Adjust modal height for mobile */
+      }
+
+      .modal-content iframe {
+        height: 100%; /* Ensure iframe takes full height */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="logo-container">
+      <img src="img/LD Capital Bridge to USA logo-01.png" alt="Logo" class="logo">
+    </div>
+
+    <div class="filter-buttons">
+      <a href="#" class="filter-btn" onclick="openModal('img/Brochure Hoschton, Georgia.pdf')">Hoschton</a>
+      <a href="#" class="filter-btn" onclick="openModal('img/Brochure North Georgia Marriott Hotel Portfolio EB5.pdf')">North Georgia</a>
+      <a href="#" class="filter-btn" onclick="openModal('img/Brochure South Georgia Marriott Hotel - EB5.pdf')">South Georgia</a>
+    </div>
+
+    <div class="status-message">
+      <h2 class="company-name">LD Capital Bridge to USA, LLC</h2>
+      <h1 class="maintenance-title">Website Under Maintenance</h1>
+      <p class="maintenance-text">We are currently performing scheduled maintenance to enhance your experience.</p>
+      <p class="return-text">We'll be back soon!</p>
+      
+      <div class="contact-info">
+        <p class="contact-heading">For any inquiries, please contact us at:</p>
+        <p class="email-links">
+          <a href="mailto:info@ldcbtusa.com">info@ldcbtusa.com</a> | 
+          <a href="mailto:admin@ldcbtusa.com">admin@ldcbtusa.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <iframe id="pdfViewer" src="" scrolling="yes"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function openModal(pdfUrl) {
+      document.getElementById('pdfViewer').src = pdfUrl; // Set the PDF source
+      document.getElementById('myModal').style.display = "block"; // Show the modal
+    }
+
+    function closeModal() {
+      document.getElementById('myModal').style.display = "none"; // Hide the modal
+      document.getElementById('pdfViewer').src = ""; // Clear the PDF source
+    }
+
+    // Close the modal when clicking outside of it
+    window.onclick = function(event) {
+      if (event.target == document.getElementById('myModal')) {
+        closeModal();
+      }
+    }
+
+    // Close the modal using the ESC key
+    window.addEventListener('keydown', function(event) {
+      if (event.key === "Escape") { // Check if the ESC key is pressed
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
