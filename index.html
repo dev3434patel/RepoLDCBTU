@@ -33,12 +33,13 @@
 
     .logo-container {
       width: 180px;
-      margin: 10px auto 20px;
+      margin: 30px auto 20px;
     }
 
     .logo {
       width: 100%;
       height: auto;
+      margin-top: 20px;
     }
 
     .filter-buttons {
@@ -48,6 +49,7 @@
       display: flex; /* Use flexbox for alignment */
       justify-content: center; /* Center buttons */
       flex-wrap: wrap; /* Allow buttons to wrap */
+      margin-bottom: 0px;
     }
 
     .filter-btn {
@@ -63,6 +65,7 @@
       transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease; /* Smooth transition */
       text-decoration: none; /* Remove underline */
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhanced shadow effect */
+      
     }
 
     .filter-btn:hover {
@@ -199,14 +202,17 @@
     <div class="logo-container">
       <img src="img/LD Capital Bridge to USA logo-01.png" alt="Logo" class="logo">
     </div>
-
+    
     <div class="filter-buttons">
       <a href="#" class="filter-btn" onclick="openModal('img/Brochure Hoschton, Georgia.pdf')">Hoschton</a>
       <a href="#" class="filter-btn" onclick="openModal('img/Brochure North Georgia Marriott Hotel Portfolio EB5.pdf')">North Georgia</a>
       <a href="#" class="filter-btn" onclick="openModal('img/Brochure South Georgia Marriott Hotel - EB5.pdf')">South Georgia</a>
+      
     </div>
-
+    <!-- <h2>Click on Projects for more details</h2><br> -->
     <div class="status-message">
+
+      
       <h2 class="company-name">LD Capital Bridge to USA, LLC</h2>
       <h1 class="maintenance-title">Website Under Maintenance</h1>
       <p class="maintenance-text">We are currently performing scheduled maintenance to enhance your experience.</p>
